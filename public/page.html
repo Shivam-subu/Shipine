@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PINSHI – Jewelry that stays with you</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF7F2;--surface:#fff;--champ:#E8D8C4;--blush:#EAD4D2;--ink:#242424;--muted:#6b645a;--gold:#B99A5B;--line:#e6dccd;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1a17;--surface:#26231f;--champ:#3a332a;--blush:#3b2f2e;--ink:#f3ece1;--muted:#b3a999;--line:#3d372f}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Jost,system-ui,sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.1;margin:0}
+a{color:inherit}button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.btn{border:1px solid var(--ink);background:var(--ink);color:var(--bg);padding:12px 26px;border-radius:999px;transition:.2s}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink)}.btn.ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+#ann{background:var(--ink);color:var(--bg);text-align:center;font-size:14px;padding:8px}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.logo{font:600 30px 'Cormorant Garamond',serif;letter-spacing:.18em;text-decoration:none}
+nav{display:flex;gap:20px;flex:1;margin-left:16px}nav a,nav button{background:none;border:0;padding:4px 0;color:var(--ink);text-decoration:none;font-size:15px}
+nav a:hover,nav button:hover,nav .on{color:var(--gold)}
+.icons{display:flex;gap:6px}.ic{background:none;border:0;padding:8px 10px;color:var(--ink);border-radius:999px;position:relative}
+.ic:hover{background:var(--champ)}.badge{position:absolute;top:0;right:0;background:var(--gold);color:#fff;border-radius:99px;font-size:11px;min-width:18px;height:18px;line-height:18px;text-align:center}
+#menu{display:none}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;min-height:560px;background:var(--champ)}
+.hero .txt{padding:72px 6vw;display:flex;flex-direction:column;justify-content:center;gap:20px}
+.hero h1{font-size:clamp(44px,6vw,84px)}.hero p{max-width:34ch;color:var(--muted);font-size:18px;margin:0}
+.hero .art{background:var(--blush)}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:72px 0}section h2{font-size:clamp(32px,4vw,48px);margin-bottom:28px}
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.cat{background:var(--champ);border:0;border-radius:18px;padding:22px 8px 16px;text-align:center;color:var(--ink)}
+.cat:hover{background:var(--blush)}.cat svg{width:64px;height:64px}.cat span{display:block;font:500 20px 'Cormorant Garamond',serif}
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px;align-items:center}
+.tools input,.tools select,.f input{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:10px 14px;border-radius:999px;font:inherit}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 16px}.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:var(--surface);border-radius:16px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.card .im{aspect-ratio:1;background:var(--champ);position:relative;display:grid;place-items:center;transition:background .2s}
+.card:hover .im{background:var(--blush)}.card .im img{width:100%;height:100%;object-fit:cover}.it .t img{width:100%;height:100%;object-fit:cover;border-radius:10px}.hero .art img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:10px;top:10px;background:var(--surface);border-radius:99px;font-size:12px;padding:2px 10px}
+.heart{position:absolute;right:8px;top:8px;background:var(--surface);border:0;border-radius:99px;width:36px;height:36px;color:var(--ink)}
+.heart.on{color:#b3453f}
+.card .b{padding:14px 16px 18px;display:flex;flex-direction:column;gap:4px;flex:1}.card h3{font-size:22px}
+.price s{color:var(--muted);margin-left:6px;font-size:14px}.price em{color:var(--gold);font-style:normal;font-size:14px;margin-left:6px}
+.card .btn{margin-top:auto;padding:9px 16px;font-size:15px}
+.story{background:var(--blush)}.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}.story p{font-size:18px;color:var(--muted);max-width:52ch}
+.occ{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.occ button{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:34px 14px;font:500 22px 'Cormorant Garamond',serif;color:var(--ink)}
+.occ button:hover{border-color:var(--gold)}
+.news{background:var(--champ);text-align:center}.news form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.news input{padding:12px 18px;border-radius:999px;border:1px solid var(--line);min-width:260px;background:var(--surface);color:var(--ink);font:inherit}
+#nmsg{min-height:24px;margin-top:10px}
+footer{padding:48px 0;font-size:15px;color:var(--muted)}footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between}
+footer a{display:block;text-decoration:none;padding:2px 0}footer a:hover{color:var(--gold)}
+#shade{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:.25s;z-index:40}#shade.on{opacity:1;pointer-events:auto}
+#drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--bg);z-index:50;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px))}
+#drawer.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center}.dh h2{font-size:32px;margin:0}
+#items{flex:1;overflow:auto;margin:14px 0}
+.it{display:grid;grid-template-columns:64px 1fr auto;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center}
+.it .t{background:var(--champ);border-radius:10px;display:grid;place-items:center;height:64px}.it svg{width:38px}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:99px;margin-top:4px}.qty button{background:none;border:0;width:30px;height:28px;color:var(--ink)}
+.rm{background:none;border:0;color:var(--muted);text-decoration:underline;font-size:13px}
+.bar{height:6px;background:var(--champ);border-radius:9px;overflow:hidden;margin:6px 0 12px}.bar i{display:block;height:100%;background:var(--gold);transition:.3s}
+.sum div{display:flex;justify-content:space-between;padding:2px 0}.sum .tot{font-weight:500;font-size:19px;border-top:1px solid var(--line);margin-top:6px;padding-top:8px}
+.f{display:grid;gap:10px}.f label{font-size:14px;color:var(--muted);display:grid;gap:3px}.f input{border-radius:12px;width:100%}
+.note{font-size:13px;color:var(--muted)}.err{color:#b3453f;font-size:14px}
+.empty{text-align:center;padding:50px 0;color:var(--muted)}
+@media(max-width:900px){nav{display:none}#menu{display:block}.hero,.story .wrap{grid-template-columns:1fr}.hero .art{min-height:300px}.cats{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.occ{grid-template-columns:repeat(2,1fr)}header .wrap{gap:6px}.logo{flex:1;font-size:26px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style><style>.doc{max-width:760px;padding:56px 20px}.doc h1{font-size:clamp(38px,5vw,56px);margin-bottom:20px}.doc h3{margin:26px 0 6px;font-size:24px}.doc p{color:var(--muted)}.doc .f{max-width:420px;margin-top:16px}</style></head><body><header><div class="wrap">
+
+<a class="logo" href="/">PINSHI</a>
+<nav><a href="/">Shop All</a><a href="/p/about">About</a><a href="/p/contact">Contact</a><a href="/p/track">Track Order</a></nav>
+</div></header>
+<main class="wrap doc" id="doc"></main><footer><div class="wrap">
+<div><div class="logo" style="font-size:24px">PINSHI</div><p>Jewelry that stays with you.</p></div>
+<div><a href="/p/about">About Pinshi</a><a href="/p/contact">Contact Us</a><a href="/p/faqs">FAQs</a><a href="/p/track">Track Your Order</a></div>
+<div><a href="/p/shipping">Shipping Policy</a><a href="/p/returns">Returns and Refunds</a><a href="/p/privacy">Privacy Policy</a><a href="/p/terms">Terms and Conditions</a></div>
+</div></footer>
+<script>
+const T='Pinshi';
+const D={
+about:['About Pinshi','<p>Pinshi makes everyday jewelry designed to move through your week: office, family dinners and nights out. Every product page lists its material and finish so you know exactly what you are buying.</p>'],
+contact:['Contact Us','<p>Questions about an order or a product? Write to us and we will reply within 1 to 2 working days.</p><p>Email: <b>support@YOURDOMAIN.com</b> · Phone / WhatsApp: <b>+91 XXXXX XXXXX</b></p>'],
+faqs:['FAQs','<h3>How long does delivery take?</h3><p>Usually 4 to 7 working days across India.</p><h3>Do you offer Cash on Delivery?</h3><p>Yes, on all pincodes we ship to.</p><h3>How do I care for my jewelry?</h3><p>Keep it dry, avoid perfume and store it in the pouch provided.</p>'],
+shipping:['Shipping Policy','<p>Shipping is ₹99. Orders of ₹1,499 and above ship free. Orders are packed within 1 to 2 working days and delivered in 4 to 7 working days. You receive tracking details once your order ships.</p>'],
+returns:['Returns and Refunds','<p>Unused items in original packaging can be returned within 7 days of delivery. Refunds are issued to the original payment method, or by bank transfer for COD orders, within 7 working days of us receiving the item. Contact support to start a return.</p>'],
+privacy:['Privacy Policy','<p>We collect only the details needed to process your order (name, email, phone, address) and to send updates you ask for. We never sell your data. Contact us to request deletion.</p>'],
+terms:['Terms and Conditions','<p>By placing an order you agree that the details you give are correct and that prices and stock may change without notice. Orders may be cancelled before shipping. Please replace the text of this page with terms reviewed by your lawyer.</p>'],
+track:['Track Your Order','<p>Enter your order number and email. Tracking will show here once shipping is connected; until then, email us your order number.</p><form class="f" onsubmit="event.preventDefault();this.nextElementSibling.textContent=\'Your order is being processed. Contact support for the latest status.\'"><input placeholder="Order number (PIN-…)" required><input type="email" placeholder="Email" required><button class="btn">Track</button></form><p></p>']};
+const k=location.pathname.split('/').pop(),d=D[k]||['Page not found','<p><a href="/">Back to shop</a></p>'];
+document.title=d[0]+' – PINSHI';document.getElementById('doc').innerHTML='<h1>'+d[0]+'</h1>'+d[1];
+</script></body></html>

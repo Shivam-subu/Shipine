@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PINSHI – Jewelry that stays with you</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF7F2;--surface:#fff;--champ:#E8D8C4;--blush:#EAD4D2;--ink:#242424;--muted:#6b645a;--gold:#B99A5B;--line:#e6dccd;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1a17;--surface:#26231f;--champ:#3a332a;--blush:#3b2f2e;--ink:#f3ece1;--muted:#b3a999;--line:#3d372f}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Jost,system-ui,sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.1;margin:0}
+a{color:inherit}button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.btn{border:1px solid var(--ink);background:var(--ink);color:var(--bg);padding:12px 26px;border-radius:999px;transition:.2s}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink)}.btn.ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+#ann{background:var(--ink);color:var(--bg);text-align:center;font-size:14px;padding:8px}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.logo{font:600 30px 'Cormorant Garamond',serif;letter-spacing:.18em;text-decoration:none}
+nav{display:flex;gap:20px;flex:1;margin-left:16px}nav a,nav button{background:none;border:0;padding:4px 0;color:var(--ink);text-decoration:none;font-size:15px}
+nav a:hover,nav button:hover,nav .on{color:var(--gold)}
+.icons{display:flex;gap:6px}.ic{background:none;border:0;padding:8px 10px;color:var(--ink);border-radius:999px;position:relative}
+.ic:hover{background:var(--champ)}.badge{position:absolute;top:0;right:0;background:var(--gold);color:#fff;border-radius:99px;font-size:11px;min-width:18px;height:18px;line-height:18px;text-align:center}
+#menu{display:none}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;min-height:560px;background:var(--champ)}
+.hero .txt{padding:72px 6vw;display:flex;flex-direction:column;justify-content:center;gap:20px}
+.hero h1{font-size:clamp(44px,6vw,84px)}.hero p{max-width:34ch;color:var(--muted);font-size:18px;margin:0}
+.hero .art{background:var(--blush)}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:72px 0}section h2{font-size:clamp(32px,4vw,48px);margin-bottom:28px}
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.cat{background:var(--champ);border:0;border-radius:18px;padding:22px 8px 16px;text-align:center;color:var(--ink)}
+.cat:hover{background:var(--blush)}.cat svg{width:64px;height:64px}.cat span{display:block;font:500 20px 'Cormorant Garamond',serif}
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px;align-items:center}
+.tools input,.tools select,.f input{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:10px 14px;border-radius:999px;font:inherit}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 16px}.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:var(--surface);border-radius:16px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.card .im{aspect-ratio:1;background:var(--champ);position:relative;display:grid;place-items:center;transition:background .2s}
+.card:hover .im{background:var(--blush)}.card .im img{width:100%;height:100%;object-fit:cover}.it .t img{width:100%;height:100%;object-fit:cover;border-radius:10px}.hero .art img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:10px;top:10px;background:var(--surface);border-radius:99px;font-size:12px;padding:2px 10px}
+.heart{position:absolute;right:8px;top:8px;background:var(--surface);border:0;border-radius:99px;width:36px;height:36px;color:var(--ink)}
+.heart.on{color:#b3453f}
+.card .b{padding:14px 16px 18px;display:flex;flex-direction:column;gap:4px;flex:1}.card h3{font-size:22px}
+.price s{color:var(--muted);margin-left:6px;font-size:14px}.price em{color:var(--gold);font-style:normal;font-size:14px;margin-left:6px}
+.card .btn{margin-top:auto;padding:9px 16px;font-size:15px}
+.story{background:var(--blush)}.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}.story p{font-size:18px;color:var(--muted);max-width:52ch}
+.occ{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.occ button{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:34px 14px;font:500 22px 'Cormorant Garamond',serif;color:var(--ink)}
+.occ button:hover{border-color:var(--gold)}
+.news{background:var(--champ);text-align:center}.news form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.news input{padding:12px 18px;border-radius:999px;border:1px solid var(--line);min-width:260px;background:var(--surface);color:var(--ink);font:inherit}
+#nmsg{min-height:24px;margin-top:10px}
+footer{padding:48px 0;font-size:15px;color:var(--muted)}footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between}
+footer a{display:block;text-decoration:none;padding:2px 0}footer a:hover{color:var(--gold)}
+#shade{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:.25s;z-index:40}#shade.on{opacity:1;pointer-events:auto}
+#drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--bg);z-index:50;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px))}
+#drawer.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center}.dh h2{font-size:32px;margin:0}
+#items{flex:1;overflow:auto;margin:14px 0}
+.it{display:grid;grid-template-columns:64px 1fr auto;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center}
+.it .t{background:var(--champ);border-radius:10px;display:grid;place-items:center;height:64px}.it svg{width:38px}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:99px;margin-top:4px}.qty button{background:none;border:0;width:30px;height:28px;color:var(--ink)}
+.rm{background:none;border:0;color:var(--muted);text-decoration:underline;font-size:13px}
+.bar{height:6px;background:var(--champ);border-radius:9px;overflow:hidden;margin:6px 0 12px}.bar i{display:block;height:100%;background:var(--gold);transition:.3s}
+.sum div{display:flex;justify-content:space-between;padding:2px 0}.sum .tot{font-weight:500;font-size:19px;border-top:1px solid var(--line);margin-top:6px;padding-top:8px}
+.f{display:grid;gap:10px}.f label{font-size:14px;color:var(--muted);display:grid;gap:3px}.f input{border-radius:12px;width:100%}
+.note{font-size:13px;color:var(--muted)}.err{color:#b3453f;font-size:14px}
+.empty{text-align:center;padding:50px 0;color:var(--muted)}
+@media(max-width:900px){nav{display:none}#menu{display:block}.hero,.story .wrap{grid-template-columns:1fr}.hero .art{min-height:300px}.cats{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.occ{grid-template-columns:repeat(2,1fr)}header .wrap{gap:6px}.logo{flex:1;font-size:26px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div id="ann" aria-live="polite"></div>
+<header><div class="wrap">
+<button class="ic" id="menu" aria-label="Open menu">☰</button>
+<a class="logo" href="#">PINSHI</a>
+<nav id="nav"></nav>
+<div class="icons">
+<button class="ic" id="wl" aria-label="Wishlist">♡<span class="badge" id="wc">0</span></button>
+<button class="ic" id="bag" aria-label="Open bag">Bag<span class="badge" id="bc">0</span></button>
+</div></div></header>
+
+<main>
+<div class="hero"><div class="txt">
+<h1>A Little Sparkle. A Lot of You.</h1>
+<p>Everyday jewelry, made to shine through every moment.</p>
+<div class="row"><button class="btn" data-go="bestsellers">Shop Bestsellers</button><button class="btn ghost" data-go="new">Explore New Arrivals</button></div>
+</div><div class="art" id="heroart"></div></div>
+
+<section><div class="wrap"><h2>Shop by category</h2><div class="cats" id="cats"></div></div></section>
+
+<section id="shop" style="padding-top:0"><div class="wrap">
+<h2 id="stitle">Shop all</h2>
+<div class="tools">
+<input id="q" type="search" placeholder="Search jewelry" aria-label="Search products">
+<select id="sort" aria-label="Sort"><option value="pop">Most popular</option><option value="new">Newest</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option></select>
+<select id="price" aria-label="Price"><option value="0">Any price</option><option value="999">Under ₹999</option><option value="1499">Under ₹1,499</option></select>
+<label><input type="checkbox" id="stock"> In stock only</label>
+<span id="count" class="note"></span><span id="chips"></span>
+<button class="chip" id="clear" hidden>Clear filters</button>
+</div>
+<div class="grid" id="grid"></div></div></section>
+
+<section class="story"><div class="wrap"><div>
+<h2>Everyday Jewelry. Effortless Confidence.</h2></div>
+<p>Pinshi makes jewelry you can reach for without thinking: pieces that sit well with a work shirt, a kurta or a night out. We design around versatility, so one earring or one pendant can move through your week. Check each product page for its material and finish details.</p></div></section>
+
+<section><div class="wrap"><h2>Shop by occasion</h2><div class="occ" id="occ"></div></div></section>
+
+
+
+<section class="news"><div class="wrap"><h2>A Little Shine in Your Inbox.</h2>
+<form id="nf" novalidate><label for="ne" class="note" style="display:none">Email</label><input id="ne" type="email" placeholder="Your email address" required><button class="btn">Subscribe</button></form>
+<div id="nmsg" role="status"></div></div></section>
+</main>
+
+<footer><div class="wrap">
+<div><div class="logo" style="font-size:24px">PINSHI</div><p>Jewelry that stays with you.</p></div>
+<div><a href="/p/about">About Pinshi</a><a href="/p/contact">Contact Us</a><a href="/p/faqs">FAQs</a><a href="/p/track">Track Your Order</a></div>
+<div><a href="/p/shipping">Shipping Policy</a><a href="/p/returns">Returns and Refunds</a><a href="/p/privacy">Privacy Policy</a><a href="/p/terms">Terms and Conditions</a></div>
+</div></footer>
+
+<div id="shade"></div>
+<aside id="drawer" aria-label="Shopping bag"><div class="dh"><h2 id="dt">Your bag</h2><button class="ic" id="x" aria-label="Close">✕</button></div>
+<div id="items"></div><div id="foot"></div></aside>
+
+<script>
+const $=s=>document.querySelector(s),fmt=n=>'₹'+n.toLocaleString('en-IN');
+const CATS=['Necklaces','Earrings','Rings','Bracelets','Jewelry Sets','Gifts'];
+const OCC=['Everyday Essentials','Date Night','Office Wear','Party Edit','Gifts Under ₹999'];
+const A='stroke="#B99A5B" stroke-width="3" fill="none" stroke-linecap="round"';
+const ART={
+Necklaces:`<svg viewBox="0 0 100 100"><path d="M18 20Q50 90 82 20" ${A}/><circle cx="50" cy="66" r="7" fill="#B99A5B"/></svg>`,
+Earrings:`<svg viewBox="0 0 100 100"><path d="M32 18v22M68 18v22" ${A}/><path d="M32 42l8 18-8 16-8-16zM68 42l8 18-8 16-8-16z" fill="#B99A5B"/></svg>`,
+Rings:`<svg viewBox="0 0 100 100"><circle cx="50" cy="60" r="24" ${A}/><path d="M42 32l8-12 8 12z" fill="#B99A5B"/></svg>`,
+Bracelets:`<svg viewBox="0 0 100 100"><ellipse cx="50" cy="52" rx="34" ry="22" ${A}/><circle cx="50" cy="74" r="5" fill="#B99A5B"/></svg>`,
+'Jewelry Sets':`<svg viewBox="0 0 100 100"><path d="M20 22Q50 70 80 22" ${A}/><path d="M28 62v14M72 62v14" ${A}/><circle cx="50" cy="52" r="5" fill="#B99A5B"/></svg>`,
+Gifts:`<svg viewBox="0 0 100 100"><rect x="22" y="40" width="56" height="40" rx="4" ${A}/><path d="M50 40v40M22 56h56M50 40c-14-18-26 0 0 0 14-18 26 0 0 0" ${A}/></svg>`};
+let P=[];
+async function load(){try{const r=await fetch('/api/products?pageSize=100');const d=await r.json();
+P=d.products.map((p,i)=>{const v=p.variants[0];return{id:i,vid:v.id,name:p.name,cat:p.category.name,sku:v.sku,price:v.price/100,orig:(v.compareAtPrice||0)/100,stock:v.stock,mat:p.material||'',occ:p.occasions,best:p.bestseller,isNew:p.featured,img:(p.images[0]||{}).url||'/images/hero.svg',t:new Date(p.createdAt).getTime()}});
+S.cart=Object.fromEntries(Object.entries(S.cart).filter(([k])=>P[k]));}
+catch(e){$('#grid').innerHTML='<div class="empty" style="grid-column:1/-1">Could not load products. Please refresh.</div>';return}
+view();cart()}
+const S={cat:'',occ:'',flag:'',q:'',sort:'pop',price:0,stock:false,cart:{},wish:[],coupon:null};
+const SHIP=99,FREE=1499;
+try{Object.assign(S,JSON.parse(localStorage.getItem('pinshi')||'{}'))}catch(e){}
+const save=()=>{try{localStorage.setItem('pinshi',JSON.stringify({cart:S.cart,wish:S.wish}))}catch(e){}};
+
+// announcement
+const MSG=['Discover your everyday sparkle.','Free shipping on orders above '+fmt(FREE)+'.','Gift something beautiful.'];let mi=0;
+$('#ann').textContent=MSG[0];setInterval(()=>{mi=(mi+1)%MSG.length;$('#ann').textContent=MSG[mi]},4000);
+$('#heroart').innerHTML='<img src="/images/hero.svg" alt="Pinshi jewelry">';
+$('#nav').innerHTML=['Shop All','Necklaces','Earrings','Rings','Bracelets','Bestsellers','New Arrivals'].map(n=>`<button data-n="${n}">${n}</button>`).join('');
+$('#cats').innerHTML=CATS.map(c=>`<button class="cat" data-c="${c}">${ART[c]}<span>${c}</span></button>`).join('');
+$('#occ').innerHTML=OCC.map(o=>`<button data-o="${o}">${o}</button>`).join('');
+
+function view(){
+let l=P.filter(p=>(!S.cat||p.cat===S.cat)&&(!S.occ||p.occ.includes(S.occ))&&(S.flag!=='best'||p.best)&&(S.flag!=='new'||p.isNew)&&(!S.q||(p.name+p.cat+p.mat).toLowerCase().includes(S.q.toLowerCase()))&&(!S.price||p.price<S.price)&&(!S.stock||p.stock>0));
+const o={pop:(a,b)=>b.best-a.best,new:(a,b)=>b.t-a.t,lo:(a,b)=>a.price-b.price,hi:(a,b)=>b.price-a.price};
+l.sort(o[S.sort]);
+$('#stitle').textContent=S.cat||S.occ||(S.flag==='best'?'Bestsellers':S.flag==='new'?'New arrivals':'Shop all');
+$('#count').textContent=l.length+(l.length===1?' product':' products');
+const ch=[S.cat,S.occ,S.flag&&(S.flag==='best'?'Bestsellers':'New arrivals'),S.q&&'“'+S.q+'”',S.price&&'Under '+fmt(S.price),S.stock&&'In stock'].filter(Boolean);
+$('#chips').innerHTML=ch.map(c=>`<span class="chip on">${c}</span> `).join('');$('#clear').hidden=!ch.length;
+$('#nav').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.n===(S.cat||(S.flag==='best'&&'Bestsellers')||(S.flag==='new'&&'New Arrivals')||(!S.occ&&!S.q&&'Shop All'))));
+$('#grid').innerHTML=l.length?l.map(p=>{const d=p.orig?Math.round(100-p.price/p.orig*100):0,w=S.wish.includes(p.id);
+return `<article class="card"><div class="im"><img src="${p.img}" alt="${p.name}" loading="lazy">${p.best?'<span class="tag">Bestseller</span>':p.isNew?'<span class="tag">New</span>':''}<button class="heart ${w?'on':''}" data-w="${p.id}" aria-label="Wishlist ${p.name}" aria-pressed="${w}">${w?'♥':'♡'}</button></div>
+<div class="b"><h3>${p.name}</h3><div class="price">${fmt(p.price)}${p.orig?`<s>${fmt(p.orig)}</s><em>${d}% off</em>`:''}</div>
+<div class="note">${p.mat}</div>
+<button class="btn" data-a="${p.id}" ${p.stock?'':'disabled style="opacity:.5;cursor:not-allowed"'}>${p.stock?'Add to bag':'Out of stock'}</button></div></article>`}).join(''):'<div class="empty" style="grid-column:1/-1">No products match these filters.<br>Try clearing a filter or searching a different word.</div>';
+}
+function setF(f){Object.assign(S,{cat:'',occ:'',flag:'',q:'',price:0,stock:false},f);$('#q').value=S.q;$('#price').value=0;$('#stock').checked=false;view();$('#shop').scrollIntoView({behavior:'smooth'})}
+$('#nav').onclick=e=>{const n=e.target.dataset.n;if(!n)return;setF(n==='Bestsellers'?{flag:'best'}:n==='New Arrivals'?{flag:'new'}:CATS.includes(n)?{cat:n}:{})};
+$('#cats').onclick=e=>{const c=e.target.closest('[data-c]');c&&setF({cat:c.dataset.c})};
+$('#occ').onclick=e=>{const o=e.target.dataset.o;o&&setF({occ:o})};
+document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>setF({flag:b.dataset.go}));
+$('#q').oninput=e=>{S.q=e.target.value;view()};$('#sort').onchange=e=>{S.sort=e.target.value;view()};
+$('#price').onchange=e=>{S.price=+e.target.value;view()};$('#stock').onchange=e=>{S.stock=e.target.checked;view()};
+$('#clear').onclick=()=>setF({});
+$('#menu').onclick=()=>{const n=$('#nav');const s=n.style.display==='flex';n.style.cssText=s?'':'display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);padding:12px 20px;border-bottom:1px solid var(--line)'};
+$('#grid').onclick=e=>{const a=e.target.dataset.a,w=e.target.dataset.w;
+if(a!==undefined){const p=P[a];if((S.cart[a]||0)<p.stock){S.cart[a]=(S.cart[a]||0)+1;save();cart();open()}}
+if(w!==undefined){const i=S.wish.indexOf(+w);i<0?S.wish.push(+w):S.wish.splice(i,1);save();view();cart()}};
+
+// cart
+
+function totals(){let sub=0;for(const k in S.cart)sub+=P[k].price*S.cart[k];
+const disc=S.coupon?(S.disc||0):0;
+const ship=sub===0?0:(sub-disc>=FREE?0:SHIP);return{sub,disc,ship,tot:sub-disc+ship}}
+function cart(){const ks=Object.keys(S.cart);$('#bc').textContent=ks.reduce((n,k)=>n+S.cart[k],0);$('#wc').textContent=S.wish.length;
+if(!ks.length){$('#items').innerHTML='<div class="empty">Your bag is empty.<br><br><button class="btn ghost" id="cont">Continue shopping</button></div>';$('#foot').innerHTML='';return}
+const t=totals();
+$('#items').innerHTML=ks.map(k=>{const p=P[k];return `<div class="it"><div class="t"><img src="${p.img}" alt=""></div><div><div>${p.name}</div><div class="qty"><button data-m="${k}" aria-label="Decrease">−</button><span>${S.cart[k]}</span><button data-p="${k}" aria-label="Increase">+</button></div> <button class="rm" data-r="${k}">Remove</button></div><div>${fmt(p.price*S.cart[k])}</div></div>`}).join('');
+const left=Math.max(0,FREE-(t.sub-t.disc));
+$('#foot').innerHTML=`<div class="note">${left?`Add ${fmt(left)} more for free shipping`:'You’ve unlocked free shipping'}</div><div class="bar"><i style="width:${Math.min(100,(t.sub-t.disc)/FREE*100)}%"></i></div>
+<div class="row" style="margin-bottom:10px"><input id="cc" class="chip" style="flex:1" placeholder="Coupon code" aria-label="Coupon code" value="${S.coupon||''}"><button class="chip" id="ap">Apply</button></div><div id="cm" class="err"></div>
+<div class="sum"><div><span>Subtotal</span><span>${fmt(t.sub)}</span></div>${t.disc?`<div><span>Discount</span><span>−${fmt(t.disc)}</span></div>`:''}<div><span>Shipping</span><span>${t.ship?fmt(t.ship):'Free'}</span></div><div class="tot"><span>Total</span><span>${fmt(t.tot)}</span></div></div>
+<button class="btn" style="width:100%;margin-top:12px" id="co">Proceed to checkout</button>`}
+$('#items').onclick=e=>{const d=e.target.dataset;
+if(d.p&&S.cart[d.p]<P[d.p].stock)S.cart[d.p]++;if(d.m&&--S.cart[d.m]<1)delete S.cart[d.m];if(d.r)delete S.cart[d.r];
+if(e.target.id==='cont')close();save();cart()};
+$('#foot').onclick=e=>{
+if(e.target.id==='ap'){const c=$('#cc').value.trim().toUpperCase();
+fetch('/api/coupon',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:c,subtotal:Math.round(totals().sub*100)})}).then(async r=>{const d=await r.json();
+if(!r.ok){S.coupon=null;cart();$('#cm').textContent=d.error;return}S.coupon=d.code;S.disc=d.discount/100;cart()})}
+if(e.target.id==='co')checkout()};
+function checkout(){const t=totals();$('#dt').textContent='Checkout';
+$('#items').innerHTML=`<form class="f" id="cf" novalidate>
+<label>Full name<input name="n" required autocomplete="name"></label><label>Email<input name="e" type="email" required autocomplete="email"></label>
+<label>Mobile number<input name="m" inputmode="numeric" maxlength="10" required autocomplete="tel"></label>
+<label>Address<input name="a" required autocomplete="street-address"></label>
+<div class="row"><label style="flex:1">City<input name="c" required></label><label style="flex:1">PIN code<input name="p" inputmode="numeric" maxlength="6" required></label></div>
+<label>State<input name="s" required></label>
+<div class="note">Payment: Cash on Delivery. Pay when your order arrives.</div><div id="ce" class="err"></div></form>`;
+$('#foot').innerHTML=`<div class="sum"><div class="tot"><span>Total (COD)</span><span>${fmt(t.tot)}</span></div></div><button class="btn" style="width:100%;margin-top:12px" id="po">Place order</button><button class="rm" id="bk" style="margin-top:8px">Back to bag</button>`;
+$('#foot').onclick=e=>{
+if(e.target.id==='bk'){$('#dt').textContent='Your bag';cart();$('#foot').onclick=footH}
+if(e.target.id==='po'){const f=new FormData($('#cf')),g=k=>(f.get(k)||'').trim();
+if(!g('n')||!g('a')||!g('c')||!g('s'))return $('#ce').textContent='Fill in every field.';
+if(!/^\S+@\S+\.\S+$/.test(g('e')))return $('#ce').textContent='Enter a valid email address.';
+if(!/^[6-9]\d{9}$/.test(g('m')))return $('#ce').textContent='Enter a 10-digit Indian mobile number.';
+if(!/^\d{6}$/.test(g('p')))return $('#ce').textContent='Enter a 6-digit PIN code.';
+const btn=e.target;btn.disabled=true;btn.textContent='Placing order…';
+fetch('/api/checkout/cod',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({idempotencyKey:S.ik||(S.ik=crypto.randomUUID()),name:g('n'),email:g('e'),phone:g('m'),line1:g('a'),city:g('c'),state:g('s'),pincode:g('p'),couponCode:S.coupon||undefined,items:Object.keys(S.cart).map(k=>({variantId:P[k].vid,quantity:S.cart[k]}))})})
+.then(async r=>{const d=await r.json();if(!r.ok){btn.disabled=false;btn.textContent='Place order';$('#ce').textContent=d.error||'Check your details.';if(r.status===409)load();return}
+S.cart={};S.coupon=null;S.ik=null;save();cart();$('#dt').textContent='Order placed';
+$('#items').innerHTML='<div class="empty">Thank you, '+g('n').replace(/[<>&]/g,'')+'.<br>Your order <b>'+d.orderNumber+'</b> is confirmed. Pay cash on delivery.</div>';$('#foot').innerHTML='<button class="btn" style="width:100%" id="dn">Continue shopping</button>';
+$('#dn').onclick=()=>{$('#dt').textContent='Your bag';close();cart();$('#foot').onclick=footH;load()}}).catch(()=>{btn.disabled=false;btn.textContent='Place order';$('#ce').textContent='Network error. Try again.'})}}}
+const footH=$('#foot').onclick;
+function open(){$('#drawer').classList.add('on');$('#shade').classList.add('on')}
+function close(){$('#drawer').classList.remove('on');$('#shade').classList.remove('on')}
+$('#bag').onclick=()=>{$('#dt').textContent='Your bag';cart();open()};$('#x').onclick=close;$('#shade').onclick=close;
+$('#wl').onclick=()=>{S.cat=S.occ=S.flag=S.q='';S.wishOnly=1;const l=P.filter(p=>S.wish.includes(p.id));$('#stitle').textContent='Your wishlist';$('#count').textContent=l.length+' saved';
+$('#grid').innerHTML=l.length?'':'<div class="empty" style="grid-column:1/-1">Nothing saved yet. Tap the heart on any piece to keep it here.</div>';
+if(l.length){const keep=P;const tmp=S.wish;S.q='';const old=P.filter;view();[...$('#grid').children].forEach((c,i)=>{const id=+c.querySelector('[data-w]').dataset.w;if(!tmp.includes(id))c.remove()})}
+$('#shop').scrollIntoView({behavior:'smooth'})};
+$('#nf').onsubmit=e=>{e.preventDefault();const m=$('#nmsg');
+fetch('/api/newsletter',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:$('#ne').value.trim()})}).then(async r=>{const d=await r.json();
+m.className=r.ok?'':'err';m.textContent=r.ok?(d.duplicate?'You’re already subscribed.':'Thanks for subscribing!'):d.error;if(r.ok)$('#ne').value=''})};
+load();
+</script></body></html>
